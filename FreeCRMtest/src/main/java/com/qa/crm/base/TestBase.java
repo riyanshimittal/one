@@ -18,6 +18,7 @@ public class TestBase {
 
 	public TestBase() 
 	{
+		System.setProperty("webdriver.chrome.silentOutput", "true");
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(System.getProperty("C:\\Users\\riyanshi.mittal\\eclipse-workspace\\FreeCRMtest\\src\\main\\java\\com\\qa\\crm\\config\\config.properties"));
@@ -34,7 +35,7 @@ public class TestBase {
 	
 	if(browsername.equals("chrome")) {
 	System.setProperty("webdriver.chrome.driver","C:/Users/riyanshi.mittal/Downloads/chromedriver_win32/chromedriver.exe");
-	driver = new ChromeDriver();
+	driver = new ChromeDriver(); }
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();
 	driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
@@ -42,6 +43,5 @@ public class TestBase {
 	driver.get(prop.getProperty("url"));
 	}
 	
-	}
 	
 }
